@@ -1,4 +1,3 @@
-
 service: sls-backend
 provider:
   name: aws
@@ -17,10 +16,12 @@ resources: # CloudFormation template syntax
       Properties:
         TableName: heroes
         AttributeDefinitions:
-          - AttributeName: id
+          - 
+            AttributeName: id
             AttributeType: S
         KeySchema:
-          - AttributeName: id
+          - 
+            AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
