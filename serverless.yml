@@ -15,7 +15,7 @@ resources: # CloudFormation template syntax
     HeroesTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: heros
+        TableName: heroes
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
