@@ -1,0 +1,29 @@
+
+service: sls-backend
+provider:
+  name: aws
+  runtime: nodejs10.x
+functions:
+  run:
+    handler: handler.run
+    events:
+      - http:
+          path: /
+          method: get
+resources:   
+  Resources:     
+    HeroesTable:       
+      Type: 'AWS::DynamoDB::Table'       
+      Properties:        
+        TableName: heroes        
+        AttributeDefinitions:           
+          -             
+            AttributeName: id             
+            AttributeType: S         
+        KeySchema:           
+          -             
+            AttributeName: id             
+            KeyType: HASH         
+        ProvisionedThroughput:            
+          ReadCapacityUnits: 1           
+          WriteCapacityUnits: 1
